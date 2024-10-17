@@ -4,9 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { FiSend } from 'react-icons/fi';
 
 // Initialize Supabase client
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-const supabaseAnonKey = process.env.REACT_APP_SUPABASE_API_KEY;
-
+const supabaseUrl = "https://huaxafoidmoqshjkgkha.supabase.co";
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1YXhhZm9pZG1vcXNoamtna2hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkxMzcyNjMsImV4cCI6MjA0NDcxMzI2M30.3573qqSm1PMOY7nvfR65YuFBSCPSty-vmQhmq8eyVj4";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 function Comment() {
@@ -26,7 +25,7 @@ function Comment() {
         try {
             const { data, error } = await supabase
                 .from('feedback')
-                .select('name, messages, created_at')
+                .select('name, message, created_at')
                 .order('created_at', { ascending: false });
 
             if (error) {
@@ -57,7 +56,7 @@ function Comment() {
 
                 const { data, error } = await supabase
                     .from('feedback')
-                    .insert([{ name, messages: message, created_at: createdAt }]);
+                    .insert([{ name, message, created_at: createdAt }]);
 
                 if (error) {
                     console.error('Error submitting feedback:', error);
@@ -71,7 +70,7 @@ function Comment() {
                     day: 'numeric'
                 });
 
-                setFeedbackList([{ name, messages: message, created_at: formattedCreatedAt }, ...feedbackList]);
+                setFeedbackList([{ name, message: message, created_at: formattedCreatedAt }, ...feedbackList]);
 
                 setName('');
                 setMessage('');
@@ -156,7 +155,7 @@ function Comment() {
                                     className="w-80 sm:w-1/3 p-4 border-l-8 border-indigo-500 bg-gray-50 rounded-lg shadow-md flex-shrink-0 transition-all duration-300 ease-in-out transform hover:scale-90 hover:bg-gray-100"
                                 >
                                     <h4 className="text-lg font-semibold text-gray-900">{feedback.name}</h4>
-                                    <p className="mt-2 text-gray-700">{feedback.messages}</p>
+                                    <p className="mt-2 text-gray-700">{feedback.message}</p>
                                     <p className="mt-2 text-gray-500 text-sm">{feedback.created_at}</p>
                                 </div>
                             ))
