@@ -58,24 +58,12 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-900 text-white py-12 sm:py-12 rounded-xl " id="contact">
-      <div ref={contentRef}
-      className={`container mx-auto flex flex-col md:flex-row justify-around items-center px-5 transition-all duration-1000 ease-in-out transform ${
-        isContentVisible
-          ? 'opacity-100 translate-y-0'
-          : 'opacity-0 translate-y-10'
-      }`}>
-        {/* <div className="flex items-center mb-6 md:mb-0">
-          <img
-            className="w-28 sm:w-32 shadow-xl transform transition-transform duration-300 hover:scale-105"
-            src={MyLogo}
-            alt="logo"
-          />
-          <p className="text-sm text-gray-400 ml-4">
-  © 2024 Muhammad Hannan
-  
-</p>
-        </div> */}
-<div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg h-[512px] overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+      <div
+        ref={contentRef}
+        className={`container mx-auto flex flex-col md:flex-row justify-around items-center px-5 transition-all duration-1000 ease-in-out transform ${isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+      >
+        <div className="lg:w-2/3 md:w-1/2 w-full bg-gray-300 rounded-lg h-[512px] overflow-hidden sm:mr-10 p-6 flex items-end justify-start relative mb-6"> {/* Added mb-6 for bottom margin */}
           <iframe
             width="100%"
             height="100%"
@@ -88,27 +76,28 @@ const Footer = () => {
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11200.264001095218!2d110.42562729096943!3d-7.022060275716979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1729149080721!5m2!1sen!2sid"
             style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
           ></iframe>
-          <div className="bg-white fixed flex flex-wrap py-6 rounded shadow-md w-full lg:w-1/2 min-h-[100px]">
-  <div className="lg:w-1/2 px-6">
-    <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
-    <p className="mt-1 text-gray-900">Jl. Dr Wahidin</p>
-  </div>
-  <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-    <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
-    <a className="text-indigo-500 leading-relaxed" href="mailto:example@email.com">muhammadhannan574@email.com</a>
-    <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">+624254238787</h2>
-    <p className="leading-relaxed">123-456-7890</p>
-  </div>
-</div>
+          <div className="bg-white flex flex-wrap py-6 rounded shadow-md w-full lg:w-3/4 min-h-[100px] relative z-10">
+            <div className="lg:w-1/2 w-full px-4 sm:px-6">
+              <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+              <p className="mt-1 text-gray-900">Jl. Dr Wahidin</p>
+            </div>
+            <div className="lg:w-1/2 w-full px-4 sm:px-6 mt-4 lg:mt-0">
+              <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+              <a className="text-indigo-500 leading-relaxed break-all" href="mailto:muhammadhannan574@email.com">
+                muhammadhannan574@email.com
+              </a>
+              <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+              <p className="leading-relaxed  text-gray-900">+624254238787</p>
+            </div>
+          </div>
 
         </div>
+
         <form
-          className="w-4/5 md:w-1/3 bg-gray-800 p-6 rounded-lg shadow-lg"
+          className="w-4/5 md:w-1/3 bg-gray-800 p-6 rounded-lg shadow-lg mb-6" // Added mb-6 for bottom margin
           id="form"
         >
-          <h2 className="text-lg font-semibold text-white mb-4">
-            Get In Touch
-          </h2>
+          <h2 className="text-lg font-semibold text-white mb-4">Get In Touch</h2>
 
           <input
             type="hidden"
@@ -169,14 +158,14 @@ const Footer = () => {
             Send Message
           </button>
           <a
-    href="https://wa.me/628117428555?text=Halo%20saya%20tertarik%20untuk%20menghubungi%20Anda"
-    className="flex items-center text-green-300 font-bold hover:text-green-200 transition duration-300 ease-in-out"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <BsWhatsapp className="mr-2 text-xl" />
-    WhatsApp Me
-  </a>
+            href="https://wa.me/628117428555?text=Halo%20saya%20tertarik%20untuk%20menghubungi%20Anda"
+            className="flex items-center text-green-300 font-bold hover:text-green-200 transition duration-300 ease-in-out"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsWhatsapp className="mr-2 text-xl" />
+            WhatsApp Me
+          </a>
           <p
             className={`text-base text-center mt-4 ${resultClass}`}
             id="result"
@@ -185,6 +174,7 @@ const Footer = () => {
           </p>
         </form>
       </div>
+
     </footer>
   );
 };
