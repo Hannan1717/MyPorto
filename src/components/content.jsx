@@ -1,8 +1,9 @@
-import React from "react";
+// import React from "react";
 import Profile from "../assets/profile.jpg";
-import { BiLogoGmail } from "react-icons/bi";
+// import { BiLogoGmail } from "react-icons/bi";
 import { useInView } from "react-intersection-observer";
-
+import { AuroraBackground } from "./ui/aurora-background";
+import { motion } from "framer-motion";
 function Content() {
   const { ref: contentRef, inView: isContentVisible } = useInView({
     triggerOnce: false, // Allows fade-in animation on both scroll up and down
@@ -10,10 +11,36 @@ function Content() {
   });
 
   return (
+
+    <>
+       <AuroraBackground>
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
+        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+          Background lights are cool you know.
+        </div>
+        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+          And this, is chemical burn.
+        </div>
+        <button className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2">
+          Explore now
+        </button>
+      </motion.div>
+    </AuroraBackground>
 <section
   className="text-gray-500 body-font bg-gradient-to-r py-20 sm:py-24 from-gray-800 to-gray-900"
   id="content"
 >
+
+
   <div
     ref={contentRef}
     className={`container mx-auto flex flex-col-reverse lg:flex-row items-center py-12 px-6 lg:px-12 transition-all duration-1000 ease-in-out transform ${
@@ -107,7 +134,7 @@ function Content() {
     </div>
   </div>
 </section>
-
+</>
   );
 }
 
