@@ -18,35 +18,30 @@ const ProjectCard = ({ project }) => {
   });
 
   return (
-    <>
-      <div className="h-[22rem] w-full flex items-center justify-center">
-        <PinContainer
-          title={project.link}
-          href={project.link}
-        >
-          <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[25rem] h-[20rem] p-0">
-            <div className="relative w-full h-full mb-4">
-              <img
-                alt="gallery"
-                className="absolute inset-0 w-full h-full object-cover object-center"
-                src={project.src}
-              />
-            </div>
-            <h3 className="max-w-xs mt-4 !pb-1 !m-0 font-bold text-base text-slate-100">
-              {project.title}
-            </h3>
-            <div className="text-base !m-0 !p-0 font-normal">
-              <span className="text-slate-500">
-                {project.description}
-              </span>
-            </div>
+    <div className="h-[22rem] w-full flex items-center justify-center">
+      <PinContainer
+        title={project.title}
+        href={project.link}
+      >
+        <div className="flex basis-full flex-col tracking-tight text-slate-100/50 sm:basis-1/2 w-[25rem] h-[20rem] p-0">
+          <div className="relative w-full h-full mb-4">
+            <img
+              alt="gallery"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+              src={project.src}
+            />
           </div>
-        </PinContainer>
-      </div>
-    </>
-
-
-
+          <h3 className="max-w-xs mt-4 !pb-1 !m-0 font-bold text-base text-slate-100">
+            {project.title}
+          </h3>
+          <div className="text-base !m-0 !p-0 font-normal">
+            <span className="text-slate-500">
+              {project.description}
+            </span>
+          </div>
+        </div>
+      </PinContainer>
+    </div>
   );
 };
 
@@ -58,7 +53,7 @@ export default function Projects() {
       category: "Website Village",
       description:
         "Developed a comprehensive website for managing resources in Kaliprau village using Laravel and MySQL",
-      link: "#",
+      link: "sorry, link is not available",
     },
     {
       src: panerokan,
@@ -83,7 +78,7 @@ export default function Projects() {
       category: "Internship",
       description:
         "Developed an E-learning platform with accounting courses using Odoo for Akuntara.",
-      link: "#",
+      link: "Sorry, link is not available",
     },
 
     {
@@ -130,16 +125,16 @@ export default function Projects() {
 
 
         {/* Desktop View */}
-        <div className="snap-x hidden md:flex flex-wrap -m-4 text-justify">
+        <div className="snap-x hidden xl:flex flex-wrap  text-justify">
           {projects.map((project, index) => (
-            <div className="snap-start lg:w-1/3 sm:w-1/2 p-4 mb-4 sm:mb-0" key={index}>
+            <div className="snap-start xl:w-1/3 sm:w-1/2 p-4 mb-4 sm:mb-0" key={index}>
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
 
         {/* Mobile View with scroll */}
-        <div ref={scrollRef} className="flex md:hidden overflow-x-auto space-x-4">
+        <div ref={scrollRef} className="flex xl:hidden overflow-x-auto space-x-4">
           {projects.map((project, index) => (
             <div className="w-full py-2 flex-shrink-0" key={index}>
               <ProjectCard project={project} />

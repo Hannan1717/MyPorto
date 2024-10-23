@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
-import { Link } from 'react-scroll';
+import { Link } from "react-router-dom";
 
 export const PinContainer = ({
     children,
