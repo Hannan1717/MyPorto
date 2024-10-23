@@ -1,18 +1,62 @@
 // import React from "react";
 import Profile from "../assets/profile.jpg";
-// import { BiLogoGmail } from "react-icons/bi";
 import { useInView } from "react-intersection-observer";
 import { AuroraBackground } from "./ui/aurora-background";
 import { motion } from "framer-motion";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import js from "../assets/js.png";
+import reactImg from "../assets/react.png";
+import css from "../assets/css.png";
+import Slider from "react-slick";
+import figma from "../assets/figma.png";
+import cisco2 from "../assets/image.png";
+import html from "../assets/html .png";
+import tailwind from "../assets/tailwind.png";
+import github from "../assets/github.png";
+import laravel from "../assets/laravel.png";
+import { useEffect, useState } from 'react';
 function Content() {
   const { ref: contentRef, inView: isContentVisible } = useInView({
     triggerOnce: false, // Allows fade-in animation on both scroll up and down
     threshold: 0.1,
   });
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 8, // Menampilkan 8 logo di desktop
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4, // Menampilkan 4 logo di tablet dan mobile
+        },
+      },
+    ],
+  };
+
+  const [text, setText] = useState('');
+  const [index, setIndex] = useState(0);
+  const originalText = 'Background lights are cool you know.';
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIndex(index + 1);
+      setText(originalText.substring(0, index + 1));
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [index]);
+
   return (
 
     <>
+
       <AuroraBackground>
         <motion.div
           initial={{ opacity: 0.0, y: 40 }}
@@ -25,6 +69,7 @@ function Content() {
           className="relative flex flex-col gap-4 items-center justify-center px-4 py-8" // Keep these classes
         >
           <div className="text-3xl md:text-7xl font-bold bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-200 bg-clip-text text-transparent leading-tight md:leading-normal w-full text-center">
+            {/* {text} */}
             Background lights are cool you know.
           </div>
           <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 text-center">
@@ -35,13 +80,8 @@ function Content() {
           </button>
         </motion.div>
       </AuroraBackground>
-
-      <section
-        className="text-gray-500 body-font bg-gradient-to-r py-20 sm:py-24 from-gray-800 to-gray-900"
-        id="content"
-      >
-
-
+      <BackgroundBeamsWithCollision className="flex flex-col" id="content">
+        {/* aboutme */}
         <div
           ref={contentRef}
           className={`container mx-auto flex flex-col-reverse lg:flex-row items-center py-12 px-6 lg:px-12 transition-all duration-1000 ease-in-out transform ${isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -133,7 +173,40 @@ function Content() {
             />
           </div>
         </div>
-      </section>
+        {/* aboutme end*/}
+
+        {/* My Skill Section */}
+        <h1 className="text-4xl mb-16 mt-6 text-center font-bold text-white animate__animated animate__fadeIn">
+          <span className="bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-200 bg-clip-text text-transparent">
+            My Skill
+          </span>
+        </h1>
+        <div className="slider-container overflow-hidden w-full px-2 sm:px-3">
+          <Slider {...settings}>
+            {[
+              js,
+              css,
+              html,
+              reactImg,
+              github,
+              tailwind,
+              laravel,
+              figma,
+              cisco2,
+            ].map((icon, index) => (
+              <img
+                key={index} // Add a unique key for each child in the list
+                src={icon}
+                title={icon.split("/").pop().split(".")[0]}
+                alt=""
+                className="sm:w-20 w-16 sm:h-20 h-16 object-contain mt-5 sm:mt-10 mb-2 sm:mb-12"
+              />
+            ))}
+          </Slider>
+        </div>
+      </BackgroundBeamsWithCollision>
+
+
     </>
   );
 }

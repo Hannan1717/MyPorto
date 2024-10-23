@@ -10,13 +10,13 @@ import Comment from "./components/coment";
 const App = () => {
   return (
     <>
-      <Header/>
-      <Content/>
-      <About/>
-      <Experience/>
-      <Projects/>
-      <Comment/>
-      <Footer/>
+      <Header />
+      <Content />
+      {/* <About /> */}
+      <Experience />
+      <Projects />
+      <Comment />
+      <Footer />
 
     </>
   );
