@@ -181,7 +181,7 @@ function Content() {
             My Skill
           </span>
         </h1>
-        <div className="slider-container overflow-hidden w-full px-2 sm:px-3">
+        <div className="slider-container overflow-hidden w-full px-2 sm:px-3 pb-10">
           <Slider {...settings}>
             {[
               js,
