@@ -54,7 +54,7 @@ function Comment() {
 
     const handleSubmit = async () => {
         const prohibitedWords = [
-            "jancok", "kontol", "asu", "bangsat", "bajingan", "memek", "ngentot",
+            "jancok", "kontol", "asu", "bangsat", "bajingan", "memek", "ngentot", "ngentod", "puki",
             "goblok", "tolol", "kampret", "setan", "anjing", "tai", "pantek", "sialan",
             "brengsek", "keparat", "cabul", "pelacur", "sundal", "perek", "babi", "monyet",
             "bejat", "brengsek", "puki", "lonte", "kafir", "binatang", "laknat",
