@@ -62,8 +62,10 @@ function Comment() {
         ];
 
         const containsProhibitedWords = (text) => {
-            return prohibitedWords.some(word => new RegExp(`\\b${word}\\b`, 'i').test(text));
+            const lowerCaseText = text.toLowerCase();
+            return prohibitedWords.some(word => new RegExp(`${word}`, 'i').test(lowerCaseText));
         };
+
 
         if (containsProhibitedWords(name) || containsProhibitedWords(message)) {
             toast.error("Input contains prohibited words. Please use polite language.", {
