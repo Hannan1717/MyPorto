@@ -3,6 +3,8 @@ import { createClient } from '@supabase/supabase-js';
 import { useInView } from "react-intersection-observer";
 import { FiSend } from 'react-icons/fi';
 import { Meteors } from './ui/meteors';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Initialize Supabase client
 const supabaseUrl = "https://huaxafoidmoqshjkgkha.supabase.co";
@@ -51,6 +53,25 @@ function Comment() {
     };
 
     const handleSubmit = async () => {
+        const prohibitedWords = [
+            "jancok", "kontol", "asu", "bangsat", "bajingan", "memek", "ngentot",
+            "goblok", "tolol", "kampret", "setan", "anjing", "tai", "pantek", "sialan",
+            "brengsek", "keparat", "cabul", "pelacur", "sundal", "perek", "babi", "monyet",
+            "bejat", "brengsek", "puki", "lonte", "kafir", "binatang", "laknat",
+            "dongo", "bloon", "dedemit", "gay", "lesbi", "bencong"
+        ];
+
+        const containsProhibitedWords = (text) => {
+            return prohibitedWords.some(word => new RegExp(`\\b${word}\\b`, 'i').test(text));
+        };
+
+        if (containsProhibitedWords(name) || containsProhibitedWords(message)) {
+            toast.error("Input contains prohibited words. Please use polite language.", {
+                theme: "dark"
+            });
+            return;
+        }
+
         if (name && message) {
             try {
                 const createdAt = new Date().toISOString();
@@ -71,15 +92,20 @@ function Comment() {
                     day: 'numeric'
                 });
 
-                setFeedbackList([{ name, message: message, created_at: formattedCreatedAt }, ...feedbackList]);
+                setFeedbackList([{ name, message, created_at: formattedCreatedAt }, ...feedbackList]);
 
                 setName('');
                 setMessage('');
+                toast.success("Feedback submitted successfully!", {
+                    theme: "dark"
+                });
             } catch (error) {
                 console.error('Unexpected error submitting feedback:', error);
+                toast.error("An unexpected error occurred. Please try again.");
             }
         }
     };
+
 
     return (
         <>
@@ -126,15 +152,6 @@ function Comment() {
                                     />
                                 </div>
                             </div>
-                            {/* <div className="p-2 w-full">
-                            <button
-                                onClick={handleSubmit}
-                                className="flex mx-auto text-white bg-indigo-500 border-0 py-3 px-8 focus:outline-none hover:bg-indigo-600 rounded-lg text-lg transition-all duration-300 ease-in-out transform hover:scale-105"
-                            >
-                            <FiSend className="ml-2" />
-                                Send
-                            </button>
-                        </div> */}
                             <div className="p-2 w-full">
                                 <button
                                     onClick={handleSubmit}

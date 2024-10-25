@@ -4,7 +4,7 @@ import Footer from "./components/footer";
 import Projects from "./components/projects";
 import Experience from "./components/experience";
 import Comment from "./components/coment";
-
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
       <Projects />
       <Comment />
       <Footer />
-
+      <ToastContainer />
     </>
   );
 };
