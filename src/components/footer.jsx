@@ -153,7 +153,7 @@ const Footer = () => {
 
           <button
             type="submit"
-            className="w-full py-3 mb-6 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-500 transition duration-300 ease-in-out"
+            className="w-full py-3 mb-6 bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-200 text-white font-semibold rounded-lg hover:opacity-80 transition duration-300 ease-in-out"
           >
             Send Message
           </button>

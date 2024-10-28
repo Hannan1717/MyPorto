@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { FiSend } from 'react-icons/fi';
 import { Meteors } from './ui/meteors';
 import { toast } from 'react-toastify';
+import { Button } from "./ui/moving-border";
 import 'react-toastify/dist/ReactToastify.css';
 
 // Initialize Supabase client
@@ -154,12 +155,13 @@ function Comment() {
                                     />
                                 </div>
                             </div>
-                            <div className="p-2 w-full">
-                                <button
+                            <div className="p-2 w-full text-end">
+                                <Button
+                                    borderRadius="10px"
                                     onClick={handleSubmit}
-                                    className="flex items-center justify-center mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                                    className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800 text-base">
                                     Send <FiSend className="ml-2" />
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>

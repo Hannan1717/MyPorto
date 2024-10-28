@@ -5,13 +5,15 @@ import Projects from "./components/projects";
 import Experience from "./components/experience";
 import Comment from "./components/coment";
 import { ToastContainer } from 'react-toastify';
+import { TimelineDemo } from './components/TimelineDemo';
 
 const App = () => {
   return (
     <>
       <Header />
       <Content />
-      <Experience />
+      {/* <Experience /> */}
+      <TimelineDemo />
       <Projects />
       <Comment />
       <Footer />

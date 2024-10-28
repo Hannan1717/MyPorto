@@ -108,9 +108,6 @@ export default function Projects() {
     >
       <div className="container px-5 mx-auto">
         <div className="text-center mb-10 mt-6">
-          {/* <h1 className="text-3xl font-extrabold text-gray-900 mb-4 animate__animated animate__fadeIn">
-            My Projects
-          </h1> */}
           <h1 className="text-4xl font-bold text-white mb-4 animate__animated animate__fadeIn">
             <span className="bg-gradient-to-r from-indigo-300 via-purple-400 to-pink-200 bg-clip-text text-transparent">
               My Projects

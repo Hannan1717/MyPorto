@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-
 export default function Experience() {
   const scrollContainerRef = useRef(null);
 
@@ -47,9 +46,8 @@ export default function Experience() {
   return (
     <section
       ref={contentRef}
-      className={`text-gray-600 body-font bg-gradient-to-r from-gray-50 via-gray-100 py-4 sm:py-4 transition-all duration-1000 ease-in-out transform ${
-        isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}id="experience"
+      className={`text-gray-600 body-font bg-gradient-to-r from-gray-50 via-gray-100 py-4 sm:py-4 transition-all duration-1000 ease-in-out transform ${isContentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        }`} id="experience"
     >
       <div className="container px-5 py-14 mx-auto text-center sm:py-28 relative">
         <div className="mb-16" >
