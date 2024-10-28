@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FiTwitter, FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
-import MyLogo from "../assets/mylogo.png";
 import { BsWhatsapp } from "react-icons/bs";
 import { useInView } from "react-intersection-observer";
 
@@ -102,7 +100,7 @@ const Footer = () => {
           <input
             type="hidden"
             name="access_key"
-            value="3fb4d7f3-81ab-42e0-b266-7a2aa397b69e"
+            value="220154af-669c-48f3-b77b-0ef1ac322054"
           />
           <input
             type="hidden"
