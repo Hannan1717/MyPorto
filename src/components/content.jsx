@@ -55,7 +55,7 @@ function Content() {
 
   return (
 
-    <>
+    <div id="content">
 
       <AuroraBackground>
         <motion.div
@@ -207,7 +207,7 @@ function Content() {
       </BackgroundBeamsWithCollision>
 
 
-    </>
+    </div>
   );
 }
 

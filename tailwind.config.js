@@ -7,8 +7,20 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'hide-scrollbar': {
+          '::-webkit-scrollbar': {
+            display: 'none',
+          },
+          '-ms-overflow-style': 'none', /* Internet Explorer and Edge */
+          'scrollbar-width': 'none', /* Firefox */
+        },
+      },
       fontFamily: {
         header: ['Roboto', 'sans-serif'], // Add Roboto as the custom font
+      },
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
       },
       keyframes: {
         slide: {

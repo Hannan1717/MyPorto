@@ -8,8 +8,8 @@ import { Button } from "./ui/moving-border";
 import 'react-toastify/dist/ReactToastify.css';
 
 // Initialize Supabase client
-const supabaseUrl = "https://huaxafoidmoqshjkgkha.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1YXhhZm9pZG1vcXNoamtna2hhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkxMzcyNjMsImV4cCI6MjA0NDcxMzI2M30.3573qqSm1PMOY7nvfR65YuFBSCPSty-vmQhmq8eyVj4";
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_API_KEY;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 function Comment() {
