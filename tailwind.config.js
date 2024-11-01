@@ -62,7 +62,7 @@ export default {
       },
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [addVariablesForColors,addScrollbarUtilities],
 };
 
 function addVariablesForColors({ addBase, theme }) {
@@ -74,4 +74,17 @@ function addVariablesForColors({ addBase, theme }) {
   addBase({
     ":root": newVars,
   });
+}
+
+function addScrollbarUtilities({ addUtilities }) {
+  const newUtilities = {
+    ".no-scrollbar::-webkit-scrollbar": {
+      display: "none",
+    },
+    ".no-scrollbar": {
+      "-ms-overflow-style": "none",
+      "scrollbar-width": "none",
+    },
+  };
+  addUtilities(newUtilities);
 }

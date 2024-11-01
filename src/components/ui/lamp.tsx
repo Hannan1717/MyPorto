@@ -82,13 +82,13 @@ export function LampDemo() {
                 </button>
             </form>
 
-            <div className="mt-9 flex justify-center overflow-auto max-h-72 w-full">
+            <div className="mt-9 flex justify-center overflow-auto  max-h-72 w-full">
                 <div className="md:w-full flex-shrink-0 w-full max-w-2xl">
                     <div className="w-full relative">
                         <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] rounded-full blur-3xl" />
                         <div className="relative shadow-xl bg-gray-900 border border-gray-800 px-4 py-4 h-full overflow-hidden rounded-lg flex flex-col justify-end items-start w-full">
                             {response ? (
-                                <div className="overflow-y-auto max-h-60 custom-scroll w-full">
+                                <div className="overflow-y-auto no-scrollbar max-h-60 w-full">
                                     <ReactMarkdown
                                         className="font-normal text-slate-400 mb-4 relative z-50 break-words w-full"
                                         components={{
