@@ -65,8 +65,8 @@ export const FloatingNav = ({
                             "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
                         )}
                     >
-                        <button className="block sm:hidden" aria-label={navItem.Name}>{navItem.icon}</button>
-                        <button className="hidden sm:block text-sm" aria-label={navItem.Name}>{navItem.name}</button>
+                        <button className="block sm:hidden" aria-label={navItem.name}>{navItem.icon}</button>
+                        <button className="hidden sm:block text-sm" aria-label={navItem.name}>{navItem.name}</button>
                     </Link>
                 ))}
             </motion.div>
