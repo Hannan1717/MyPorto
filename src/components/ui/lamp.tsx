@@ -8,7 +8,6 @@ import { FaPaperPlane, FaSpinner } from 'react-icons/fa';
 import { Meteors } from '../ui/meteors';
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 // const geminiApiKey = process.env.VITE_GEMINI_API_KEY;
 // if (!geminiApiKey) {
