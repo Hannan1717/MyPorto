@@ -69,7 +69,7 @@ export function LampDemo() {
                 </LabelInputContainer>
 
                 <button
-                    type="submit"
+                    type="submit" aria-label="Submit form"
                     className="flex items-center justify-center bg-gradient-to-br from-black to-neutral-600 text-white rounded-md p-2 shadow-md transition-transform transform hover:scale-105"
                     disabled={loading} // Disable button while loading
                 >

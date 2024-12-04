@@ -116,7 +116,7 @@ function Content() {
               <a
                 href="https://www.instagram.com/hannan.zz"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer" aria-label="Instagram profile of Hannan"
               >
                 <svg
                   fill="none"
@@ -134,7 +134,7 @@ function Content() {
               <a
                 href="https://www.linkedin.com/in/muhammadhannan-mh"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer" aria-label="LinkedIn profile of Hannan"
               >
                 <svg
                   fill="currentColor"
@@ -148,7 +148,7 @@ function Content() {
               <a
                 href="https://github.com/Hannan1717"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer" aria-label="Github profile of Hannan"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
